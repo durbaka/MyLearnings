@@ -88,7 +88,7 @@ go to ~/docker-nginx   folder and replace default.conf file with below file .
 
 server {
 location /web-tomcat {
-proxy_pass http://10.209.25.45:44905/;
+proxy_pass http://host:port/;
 proxy_intercept_errors on;
 proxy_set_header Host $http_host;
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -97,7 +97,7 @@ location ~ \.(gif|jpg|png)$ {
 root /data/images;
 }
 location / {
-proxy_pass http://10.209.25.30:8500;
+proxy_pass http://host:port;
 }
 
 }
